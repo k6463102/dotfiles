@@ -3,10 +3,17 @@ filetype plugin indent on
 
 autocmd BufWritePre * :%s/\s\+$//ge
 
-colorscheme pablo
-
-set cursorline
-set t_Co=256
-highlight CursorLine term=reverse cterm=none ctermbg=240
+colorscheme elflord
 
 set laststatus=2
+
+set incsearch
+set number
+set showtabline=2
+
+noremap <F1> gT
+noremap <F2> gt
+
+ca tn tabnew
+
+noremap <F5> :w<CR>:make<CR>
