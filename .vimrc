@@ -8,6 +8,10 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('tomasr/molokai')
+  call dein#add('w0ng/vim-hybrid')
+  call dein#add('morhetz/gruvbox')
+  call dein#add('gosukiwi/vim-atom-dark')
 
   call dein#end()
   call dein#save_state()
@@ -18,7 +22,8 @@ syntax enable
 
 autocmd BufWritePre * :%s/\s\+$//ge
 
-colorscheme elflord
+set background=dark
+colorscheme hybrid
 
 set laststatus=2
 
