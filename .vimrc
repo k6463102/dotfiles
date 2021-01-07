@@ -13,6 +13,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('morhetz/gruvbox')
   call dein#add('gosukiwi/vim-atom-dark')
   call dein#add('nvie/vim-flake8')
+  call dein#add('vim-jp/vimdoc-ja')
 
   call dein#end()
   call dein#save_state()
