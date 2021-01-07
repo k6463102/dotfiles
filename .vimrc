@@ -16,6 +16,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('vim-jp/vimdoc-ja')
   call dein#add('tpope/vim-fugitive')
   call dein#add('justmao945/vim-clang')
+  call dein#add('davidhalter/jedi-vim')
 
   call dein#end()
   call dein#save_state()
