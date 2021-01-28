@@ -18,6 +18,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('justmao945/vim-clang')
   call dein#add('davidhalter/jedi-vim')
   call dein#add('fatih/vim-go')
+  call dein#add('psf/black')
 
   call dein#end()
   call dein#save_state()
@@ -47,3 +48,6 @@ noremap <F5> :w<CR>:make<CR>
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#popup_on_dot=0
 let g:jedi#popup_select_first=0
+
+nnoremap <F9> :Black<CR>
+autocmd BufWritePre *.py execute ':Black'
