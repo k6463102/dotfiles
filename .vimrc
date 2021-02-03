@@ -1,53 +1,32 @@
-if &compatible
-  set nocompatible
-endif
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
 
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+Plug 'morhetz/gruvbox'
 
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('tomasr/molokai')
-  call dein#add('w0ng/vim-hybrid')
-  call dein#add('morhetz/gruvbox')
-  call dein#add('gosukiwi/vim-atom-dark')
-  call dein#add('nvie/vim-flake8')
-  call dein#add('vim-jp/vimdoc-ja')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('justmao945/vim-clang')
-  call dein#add('davidhalter/jedi-vim')
-  call dein#add('fatih/vim-go')
-  call dein#add('psf/black')
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-syntax enable
-
-autocmd BufWritePre * :%s/\s\+$//ge
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+call plug#end()
 
 set background=dark
-colorscheme hybrid
+colorscheme gruvbox
 
-set laststatus=2
+let lsp_signature_help_enabled = 0
 
-set incsearch
 set number
+set incsearch
+set laststatus=2
 set showtabline=2
 
 noremap <F1> gT
 noremap <F2> gt
-
-ca tn tabnew
-
 noremap <F5> :w<CR>:make<CR>
 
-autocmd FileType python setlocal completeopt-=preview
-let g:jedi#popup_on_dot=0
-let g:jedi#popup_select_first=0
+autocmd BufWritePre * :%s/\s\+$//ge
 
-nnoremap <F9> :Black<CR>
-autocmd BufWritePre *.py execute ':Black'
+autocmd FileType c      setlocal sts=-1 sw=0 ts=2 et
+autocmd FileType cpp    setlocal sts=-1 sw=0 ts=2 et
+autocmd FileType python setlocal sts=-1 sw=0 ts=4 et
+autocmd FileType go     setlocal sts=-1 sw=0 ts=4 noet
