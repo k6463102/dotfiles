@@ -13,7 +13,7 @@ call plug#end()
 set background=dark
 colorscheme gruvbox
 
-let lsp_signature_help_enabled = 0
+let lsp_signature_help_enabled=0
 
 set number
 set incsearch
@@ -30,3 +30,7 @@ autocmd FileType c      setlocal sts=-1 sw=0 ts=2 et
 autocmd FileType cpp    setlocal sts=-1 sw=0 ts=2 et
 autocmd FileType python setlocal sts=-1 sw=0 ts=4 et
 autocmd FileType go     setlocal sts=-1 sw=0 ts=4 noet
+autocmd FileType html   setlocal sts=-1 sw=0 ts=2 et
+autocmd FileType xhtml  setlocal sts=-1 sw=0 ts=2 et
+
+autocmd BufWritePre * :LspDocumentFormatSync
