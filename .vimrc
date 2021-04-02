@@ -32,5 +32,8 @@ autocmd FileType python setlocal sts=-1 sw=0 ts=4 et
 autocmd FileType go     setlocal sts=-1 sw=0 ts=4 noet
 autocmd FileType html   setlocal sts=-1 sw=0 ts=2 et
 autocmd FileType xhtml  setlocal sts=-1 sw=0 ts=2 et
+autocmd FileType sh     setlocal sts=-1 sw=0 ts=2 et
 
 autocmd BufWritePre * :LspDocumentFormatSync
+
+noremap gd :LspDefinition<CR>
