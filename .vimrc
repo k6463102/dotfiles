@@ -8,6 +8,8 @@ Plug 'mattn/vim-lsp-settings'
 
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plug 'vim-jp/vimdoc-ja'
 call plug#end()
 
 set background=dark
@@ -34,6 +36,6 @@ autocmd FileType html   setlocal sts=-1 sw=0 ts=2 et
 autocmd FileType xhtml  setlocal sts=-1 sw=0 ts=2 et
 autocmd FileType sh     setlocal sts=-1 sw=0 ts=2 et
 
-autocmd BufWritePre * :LspDocumentFormatSync
-
 noremap gd :LspDefinition<CR>
+
+set helplang=ja
